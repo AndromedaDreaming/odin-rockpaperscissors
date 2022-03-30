@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Rock Paper Scissors</title>
+    </head>
+    <body>
+        <script>
+            //Pseudocode-- 
+            //User prompted to choose "rock", "paper", or "scissors"
+            //The computer randomly chooses as well
+            //Rock beats scissors
+            //Paper beats rock
+            //Scissors beats paper
+
+            //If user chooses rock and computer chooses rock
+            //Then it's a tie
+            //Else if computer chooses paper
+            //Then computer wins
+            //Else if computer chooses scissors
+            //Then user wins
+
+            //If user chooses paper and computer chooses paper
+            //Then it's a tie
+            //Else if computer chooses scissors
+            //Then computer wins
+            //Else if computer chooses rock
+            //Then user wins
+
+            //If user chooses scissors and computer chooses scissors
+            //Then it's a tie
+            //Else if computer chooses rock
+            //Then computer wins
+            //Else if computer chooses paper
+            //Then user wins
+
+            // JavaScript goes here
+
+            //Function for computer random choice
+            function computerPlay() {
+                let random = ["rock", "paper", "scissors"];
+                randomChoice = random[Math.floor(Math.random()* random.length)];
+                return randomChoice;
+            }
+            //Play first round
+            function playRound(playerSelection, computerSelection) {
+                if(playerSelection.toLowerCase() === computerSelection) {
+                    return "It is a tie!";
+                }
+                else if(playerSelection.toLowerCase() == "rock" && computerSelection == "paper"){
+                       return "You lose! Paper beats rock!"; 
+                    }else{
+                        if(computerSelection == "scissors") {
+                            return "You win! Rock beats scissors!";
+                        }
+                    }
+                }    
+
+            const playerSelection = "paper";
+            const computerSelection = computerPlay();
+            console.log(playRound(playerSelection, computerSelection));
+        </script>
+    </body>
+</html>
