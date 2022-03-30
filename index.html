@@ -36,46 +36,63 @@
 
             // JavaScript goes here
 
+        
             //Function for computer random choice
             function computerPlay() {
                 let random = ["rock", "paper", "scissors"];
                 randomChoice = random[Math.floor(Math.random()* random.length)];
                 return randomChoice;
             }
-            //Play first round
+            //Function to play one round
             function playRound(playerSelection, computerSelection) {
                 if(playerSelection.toLowerCase() === computerSelection) {
                     return "It is a tie!";
                 }
                 else if(playerSelection.toLowerCase() == "rock" && computerSelection == "paper"){
+                    computerScore++;
                     return "You lose! Paper beats rock!"; 
                     }else{
                         if(computerSelection == "scissors") {
+                            userScore++;
                             return "You win! Rock beats scissors!";
                         }
                     }
                 if(playerSelection.toLowerCase() == "paper" && computerSelection == "scissors"){
+                    computerScore++;
                     return "You lose! Scissors beats paper!";
                     }else{
                         if(computerSelection == "rock") {
+                            userScore++;
                             return "You win! Paper beats rock!";
                         }
                     }
                 if(playerSelection.toLowerCase() == "scissors" && computerSelection == "rock"){
+                    computerScore++;
                     return "You lose! Rock beats paper!";
                     }else{
                         if(computerSelection == "paper") {
+                            userScore++;
                             return "You win! Scissors beats paper!";
                         }
                 }    
                 }    
-            //Function for 5 rounds    
-            function game() {
 
+            // Keep score 
+            let userScore = parseInt(0);
+            let computerScore = parseInt(0);
+
+            //Function to call playRound for 5 rounds    
+            function game() {
+                for (let i = 0; i < 5; i++) {
+                    let playerSelection = prompt("Choose rock, paper, or scissors!");
+                    const computerSelection = computerPlay();
+                    console.log(playRound(playerSelection, computerSelection))
+                    console.log("Your score = " + userScore);
+                    console.log("Computer's score = " + computerScore);
+                }
             }    
-            const playerSelection = "scissors";
-            const computerSelection = computerPlay();
-            console.log(playRound(playerSelection, computerSelection));
+
+            game();
         </script>
     </body>
 </html>
