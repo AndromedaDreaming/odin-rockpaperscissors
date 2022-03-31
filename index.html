@@ -83,10 +83,14 @@
                         computerScore++;
                         return "Computer wins! Rock beats scissors!";
                     }
-                else {
+                    else {
                         userScore++;
                         return "You win! Scissors beats paper!";
                     }
+                }
+                //Check for proper user input
+                else {
+                    return "Wrong input. Please choose rock, paper, or scissors!";
                 }
                 }
             // Keep score 
