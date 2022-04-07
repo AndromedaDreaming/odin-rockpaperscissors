@@ -62,32 +62,32 @@ function playRound(playerSelection, computerSelection) {
      //Check for rock
         if(playerSelection === "rock") {
            if(computerSelection === "paper") {
+                result = "Computer wins this round! Paper beats rock!"; 
                 computerScore++;
-                result = "Computer wins! Paper beats rock!"; 
             } else {
+                result = "You win this round! Rock beats scissors!";
                 userScore++;
-                result = "You win! Rock beats scissors!";
             }
         }
     //Check for paper
         if(playerSelection == "paper") {
             if(computerSelection == "scissors") {
-                result = "Computer wins! Scissors beats paper!";
+                result = "Computer wins this round! Scissors beats paper!";
                 computerScore++;
             }
             else {
-                result = "You win! Paper beats rock!";
+                result = "You win this round! Paper beats rock!";
                 userScore++;
             }
         }
     //Check for scissors
         if(playerSelection == "scissors") {
             if(computerSelection == "rock") {
-                result = "Computer wins! Rock beats scissors!";
+                result = "Computer wins this round! Rock beats scissors!";
                 computerScore++;
          }
             else {
-                result = "You win! Scissors beats paper!";
+                result = "You win this round! Scissors beats paper!";
                 userScore++;
          }
         }
@@ -133,3 +133,8 @@ h1.appendChild(whoWon);
 whoWon.textContent = "Let's play!";
 h1.appendChild(mainScore);
 mainScore.textContent = `Your score: ${userScore}, Computer's score: ${computerScore}`;
+
+h1.style.margin = "15px";
+resetBtn.style.borderColor = "white";
+resetBtn.style.borderRadius = "8px";
+resetBtn.style.fontSize =  "25px";

@@ -1,0 +1,16 @@
+.container {
+    background-color: rgb(15, 75, 122);
+    color: rgb(227, 233, 238);
+    text-align: center;
+    margin: 10px;
+    border-radius: 8px;
+}
+
+#rock,
+#paper,
+#scissors {
+    font-size: 30px;
+    border-radius: 8px;
+    margin: 20px;
+    border-color: white;
+}
